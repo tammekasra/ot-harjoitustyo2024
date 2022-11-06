@@ -3,3 +3,8 @@ Author: Ranel Tammela <raneltam@ad.helsinki.fi>                                 
 
 
 
+
+
+
+
+jok umuutos ennen commit ....
