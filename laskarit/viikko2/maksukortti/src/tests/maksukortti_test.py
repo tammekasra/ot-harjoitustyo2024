@@ -35,5 +35,10 @@ class TestMaksukortti(unittest.TestCase):
     	self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
     def test_kortin_saldo_maukkaasti(self):
         self.kortti.syo_maukkaasti()
+        self.kortti.syo_maukkaasti()
+        self.kortti.syo_maukkaasti() #Meilla on vain  2 euro jaljella, ja siita emme saa pienentaa sita rahaa lainkaan
+        self.assertEqual((str(self.kortti)),"Kortilla on rahaa 2.00 euroa")
+    def test_ei_menee_negatiiviseksi(self):
+        kortti = Maksukortti(-999999)
+        self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")    
 
-        self.assertGreater(-1,int(self.kortti),"Kortilla on rahaa 0.00 euroa")
