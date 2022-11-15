@@ -4,6 +4,9 @@
 
 **Hello Hello** this is root@5500 spekaing. *Hopefully everything is working properly....*
 
+
+[tyonaikaa.md](https://github.com/tammekasra/ot-harjoitustyo/blob/main/tyoanaikaa.md)
+
 [gitlog.txt](https://github.com/tammekasra/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
 
 
