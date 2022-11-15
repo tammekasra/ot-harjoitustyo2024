@@ -6,6 +6,7 @@
 
 
 [työaikakirjanpitoon](https://github.com/tammekasra/ot-harjoitustyo/blob/main/tyoanaikaa.md)
+[vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo/blob/main/vaatimusmaarittely.md)
 
 [gitlog.txt](https://github.com/tammekasra/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
 
