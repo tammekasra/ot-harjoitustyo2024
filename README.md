@@ -12,3 +12,7 @@ Practicing Git and GitHub.
 
 
 [gitlog](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/laskarit/viikko1/gitlog.txt)
+
+## Week 2 
+
+[vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/vaatimusmaarittely.md)
