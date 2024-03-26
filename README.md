@@ -15,3 +15,4 @@ The user then has to figure out whhich numbers to put where until the full grid 
 ## Week 2 
 
 [vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/vaatimusmaarittely.md)
+[tuntikirjanpito](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/tuntikirjanpito.md)
