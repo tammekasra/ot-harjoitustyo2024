@@ -9,7 +9,12 @@ def foo(ctx):
 
 @task
 def start(ctx):
-    ctx.run("python3 src/index.py", pty=True)
+    ctx.run("python src/index.py", pty=True)
+
+@task
+def main(ctx):
+    ctx.run("python src/main.py")
+
 
 @task
 def lorem_ipsum(ctx):
