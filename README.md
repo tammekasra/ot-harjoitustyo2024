@@ -13,6 +13,8 @@ The user then has to figure out whhich numbers to put where until the full grid 
 [tuntikirjanpito](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/tuntikirjanpito.md)
 
 
+!!! Vieläkin nämä __pycache__ ovat generoitu jos command "poetry run invoke test " vaikka .gitignore sisältää __pycache__ .... olen yrittänyt parantaa tätä mutta jostain syystä see ei toimi, nyt käytän  git clean -fdX saadakesni nämä pois...
+
 
 [Changelogin](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/changelog.md)
 
@@ -23,4 +25,4 @@ Additional commands that work -
      
      poetry run invoke test - suorittaa testit pytestin avulla
      
-     poetry run invoke coverage-report - jostain syystä ei toimii!!  - kerää coveragen avulla testikattavuuden ja muodostaa sen perusteella selaimessa avattavan, HTML-muotoisen testikattavuusraportin
+     poetry run invoke coverage-report - nyt toimii!!  - kerää coveragen avulla testikattavuuden ja muodostaa sen perusteella selaimessa avattavan, HTML-muotoisen testikattavuusraportin
