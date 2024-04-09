@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ot-harjoitustyo2024"
+name = "src"
 version = "0.1.0"
 description = ""
 authors = ["Ranel Tammela <ranel.tammela@helsinki.fi>"]
@@ -7,13 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-cowsay = "1.0"
-invoke = "^2.2.0"
+cowsay = "^6.1"
 
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
-coverage = "^7.4.4"
 
 [build-system]
 requires = ["poetry-core"]
