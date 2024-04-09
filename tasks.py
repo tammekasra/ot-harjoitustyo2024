@@ -9,7 +9,11 @@ def foo(ctx):
 
 @task
 def start(ctx):
-    ctx.run("python src/index.py", pty=True)
+    ctx.run("python src/index.py")
+
+@task
+def test(ctx):
+    ctx.run("poetry run pytest src/tests")
 
 @task
 def main(ctx):
@@ -23,10 +27,12 @@ def lorem_ipsum(ctx):
 
 @task
 def coverage(ctx):
-    ctx.run("coverage run --branch -m pytest", pty=True)
+    ctx.run("coverage run --branch -m pytest")
+
+@task
+def coverage(ctx):
+    ctx.run("coverage run --branch -m pytest src")
 
 @task(coverage)
 def coverage_report(ctx):
-    ctx.run("coverage html", pty=True)
-    if platform != "win32":
-        call(("xdg-open", "htmlcov/index.html"))
+    ctx.run("coverage html")
