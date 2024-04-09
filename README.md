@@ -18,6 +18,9 @@ The user then has to figure out whhich numbers to put where until the full grid 
 
 Additional commands that work - 
      poetry run invoke main - käynnistää ohjelmaan
+     
      poetry run invoke start - käynnistää invoke start 
+     
      poetry run invoke test - suorittaa testit pytestin avulla
+     
      poetry run invoke coverage-report - jostain syystä ei toimii!!  - kerää coveragen avulla testikattavuuden ja muodostaa sen perusteella selaimessa avattavan, HTML-muotoisen testikattavuusraportin
