@@ -1,24 +1,11 @@
 ```mermaid
-classDiagram
-    SudokuGame --> "1" SudokuBoard : contains
-    class SudokuGame {
-        -difficulty: string
-        -timer: int
-        -username: string
-        -board: SudokuBoard
-        +startGame(difficulty: string): void
-        +checkSolution(): boolean
-        +generateHint(): void
-        +startTimer(): void
-    }
-    class SudokuBoard {
-        -grid: int[][]
-        +getGrid(): int[][]
-        +setGrid(grid: int[][]): void
-        +isValidMove(row: int, col: int, num: int): boolean
-        +isBoardFull(): boolean
-        +isSolved(): boolean
-        +solve(): boolean
-    }
+ classDiagram
+    Monopolipeli "1" -- "2" Noppa
+    Monopolipeli "1" -- "1" Pelilauta
+    Pelilauta "1" -- "40" Ruutu
+    Ruutu "1" -- "1" Ruutu : seuraava
+    Ruutu "1" -- "0..8" Pelinappula
+    Pelinappula "1" -- "1" Pelaaja
+    Pelaaja "2..8" -- "1" Monopolipeli
 ```
 
