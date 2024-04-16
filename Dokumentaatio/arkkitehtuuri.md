@@ -6,7 +6,7 @@
     SudokuGame "1" -- "1" Game
     Game "1" -- "1..3" Difficulty
     Game "1" -- "1" User Interface
-    User Interface "1" - "1" The game
+    User Interface "1" -- "1" The game
     Game "1" -- "1" Board
     Board "1" -- "1" Solve
     Game "1" - "1..x" Point
