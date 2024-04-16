@@ -1,12 +1,12 @@
 
-import unittest
+import unittest 
+from Sudoku.game import SudokuGame  # Import the sudoku game itself to do the tests
 import main
 
 
 class TestPrintSudokuBoard(unittest.TestCase):
     def test_print_sudoku_board(self):
-        sudoku_board = main.sudoku_board
-
+        sudoku_board = main.SudokuGame.sudoku_board #SudokuGame.sudoku_board
         expected_board = [
             [5, 3, 0, 0, 7, 0, 0, 0, 0],
             [6, 0, 0, 1, 9, 5, 0, 0, 0],
