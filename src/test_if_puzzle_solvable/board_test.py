@@ -38,6 +38,21 @@ class TestPrintSudokuBoard(unittest.TestCase):
         ]
 
         self.assertEqual(sudoku_board, expected_board)
+        
+        
+    ''' 
+    
+    This just test whether the generated board is not filled with 0s - since we need a board filled with number from 1 to 10
+    
+    '''
+    
+    def test_if_there_are_no_zeros_in_grid(self):
+        sudoku_board = main.SudokuGame.sudoku_board
+        
+        for i in range(9):
+            for j in range(9):
+                self.assertNotEqual(sudoku_board[i][j], 0, "There should be no zeros in the grid")
+        
 
 
 if __name__ == '__main__':
