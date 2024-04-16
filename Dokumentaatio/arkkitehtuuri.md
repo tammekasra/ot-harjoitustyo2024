@@ -1,7 +1,7 @@
 ```mermaid
  classDiagram
     SudokuGame "1" -- "1" UI
-    UI "1" - Account creation
+    UI "1" -- Account creation
     SudokuGame "1" -- "1..x" Players Score
     SudokuGame "1" -- "1" Game
     Game "1" -- "1..3" Difficulty
