@@ -8,22 +8,38 @@ class SudokuGame:
        
         for row in board:
             print(" ".join(map(str, row)))
-
-
-        # Example Sudoku board just for testing
-    sudoku_board = [
-            [5, 3, 0, 0, 7, 0, 0, 0, 0],
-            [6, 0, 0, 1, 9, 5, 0, 0, 0],
-            [0, 9, 8, 0, 0, 0, 0, 6, 0],
-            [8, 0, 0, 0, 6, 0, 0, 0, 3],
-            [4, 0, 0, 8, 0, 3, 0, 0, 1],
-            [7, 0, 0, 0, 2, 0, 0, 0, 6],
-            [0, 6, 0, 0, 0, 0, 2, 8, 0],
-            [0, 0, 0, 4, 1, 9, 0, 0, 5],
-            [0, 0, 0, 0, 8, 0, 0, 7, 9]
-        ]
+    
+    
+  
+        ''' 
+        This is an example board we tested if everything was alright
+        
+        '''
+    #sudoku_board = [
+    #        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    #        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    #        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    #        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    #        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    #        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    #        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    #        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    #        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+     #   ]
 
         # Prints it
+    '''
+     
+    We just take the generated board from board_generator - sudoku board
+    
+    '''
+    sudoku_board = board_generator.BoardGenerator.RandomBoard()
+    
+    
+    ''' 
+    This just prints the sudoku board
+    
+    '''
     print_sudoku_board(sudoku_board)
 
 

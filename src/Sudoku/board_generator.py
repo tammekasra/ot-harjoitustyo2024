@@ -21,3 +21,13 @@ class BoardGenerator:
             [0, 0, 0, 0, 0, 0, 0, 0, 0]
         ]
     
+    def RandomBoard():
+        
+        for i in range(9):
+            for j in range(9):
+                BoardGenerator.sudoku_board[i][j] = random.randint(1, 9)
+                
+        return BoardGenerator.sudoku_board
+                
+        
+    
