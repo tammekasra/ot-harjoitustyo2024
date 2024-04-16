@@ -16,6 +16,10 @@ def test(ctx):
     ctx.run("poetry run pytest src/tests")
 
 @task
+def lint(ctx):
+    ctx.run("pylint src")
+
+@task
 def main(ctx):
     ctx.run("python src/test.py")
 
