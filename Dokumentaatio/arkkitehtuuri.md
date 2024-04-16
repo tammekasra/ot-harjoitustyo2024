@@ -10,7 +10,7 @@
     Game "1" -- "1" Board
     Board "1" -- "1" Solve
     Game "1" - "1..x" Point
-    Game "1" - Timer
+    Game "1" -- Timer
     
 ```
 
