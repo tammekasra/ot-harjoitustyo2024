@@ -3,6 +3,7 @@
     SudokuGame "1" -- "1" UI
     UI "1" -- "1..x" Account creation
     UI "1" -- "1..x" Players Score
+    User Interface "1" -- "1" Game
     Account creation "1" -- "1" Game
     Game "1" -- "1..3" Difficulty
     Game "1" -- "1" User Interface
