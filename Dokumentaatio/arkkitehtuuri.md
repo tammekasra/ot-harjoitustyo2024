@@ -1,11 +1,11 @@
 ```mermaid
  classDiagram
-    Monopolipeli "1" -- "2" Noppa
-    Monopolipeli "1" -- "1" Pelilauta
-    Pelilauta "1" -- "40" Ruutu
-    Ruutu "1" -- "1" Ruutu : seuraava
-    Ruutu "1" -- "0..8" Pelinappula
-    Pelinappula "1" -- "1" Pelaaja
-    Pelaaja "2..8" -- "1" Monopolipeli
+    SudokuGame "1" -- "1" UI
+    SudokuGame "1" -- "1..x" Players
+    SudokuGame "1" -- "1" Game
+    Game "1" -- "1..3" Difficulty
+    Game "1" -- "1" User Interface
+    Game "1" -- "1" Board
+    Board "1" -- "1" Solve
 ```
 
