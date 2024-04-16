@@ -5,7 +5,12 @@ The Sudoku game is a game where there are m x m rows and columns such that each 
 The user then has to figure out whhich numbers to put where until the full grid is completed!
 
 
+## Note on Python Version
 
+The application has been tested with Python version 3.8. Issues may arise, especially with older Python versions.
+
+
+## Dokumetation
 
 [vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/vaatimusmaarittely.md)
 
@@ -17,13 +22,59 @@ The user then has to figure out whhich numbers to put where until the full grid 
 
 [Arkkitehtuurikuvaus](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/arkkitehtuuri.md)
 
-Additional commands that work - 
-     poetry run invoke main - This starts the main.py
-     
-     poetry run invoke start - This invokes start 
-     
-     poetry run invoke test - This does the pytests using unittest approach
-     
-     poetry run invoke coverage-report - This gets the coverage of the overall code
 
-     petry run invoke lint - This makes the pylint test
+
+## Installation
+
+1. Install dependencies with the following command:
+
+```bash
+poetry install
+```
+
+2. Perform necessary initialization steps with the command:
+
+```bash
+poetry run invoke build
+```
+
+3. Start the application with the command:
+
+```bash
+poetry run invoke start
+```
+
+## Command Line Operations
+
+### Running the Program
+
+You can run the program with the following command:
+
+```bash
+poetry run invoke start
+```
+
+### Testing
+
+Tests can be run with the command:
+
+```bash
+poetry run invoke test
+```
+
+### Test Coverage
+
+Generate a test coverage report with the command:
+
+```bash
+poetry run invoke coverage-report
+```
+
+### Pylint coverage
+
+Generate a test coverage using pylint command:
+
+```bash
+poetry run invoke lint
+```
+
