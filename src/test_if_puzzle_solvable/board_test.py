@@ -22,7 +22,7 @@ class TestPrintSudokuBoard(unittest.TestCase):
                 self.assertNotEqual(sudoku_board[i][j], 0, "There should be no zeros in the grid")
                 
     '''
-    This just checks if there are same numbers on the same board
+    This just checks if there are same numbers on the same ROW
     
     '''
     
@@ -38,6 +38,20 @@ class TestPrintSudokuBoard(unittest.TestCase):
                 for current_number in range(9): #We don't want that the number we are checking is the same as in the rows!
                     if current_number != j:
                         self.assertNotEqual(column, row[current_number]) #checks if the numbers in the row are not the same!
+
+    '''
+    This just check if there are same numbers on the same COLUMN
+    '''
+    def test_if_there_are_same_numbers_on_the_same_column(self):
+        sudoku_board = main.SudokuGame.sudoku_board
+        
+        for i in range(9): 
+            column = [sudoku_board[j][i] for j in range(9)] 
+            for j in range(9): 
+                current_number = column[j]
+                for k in range(9): 
+                    if k != j:
+                        self.assertNotEqual(current_number, column[k])
 
 if __name__ == '__main__':
     unittest.main()
