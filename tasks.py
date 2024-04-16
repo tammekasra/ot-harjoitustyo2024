@@ -9,7 +9,7 @@ def foo(ctx):
 
 @task
 def start(ctx):
-    ctx.run("python src/index.py")
+    ctx.run("python src/main.py")
 
 @task
 def test(ctx):
@@ -17,7 +17,7 @@ def test(ctx):
 
 @task
 def main(ctx):
-    ctx.run("python src/main.py")
+    ctx.run("python src/test.py")
 
 
 @task

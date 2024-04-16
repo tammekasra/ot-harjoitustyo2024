@@ -5,6 +5,7 @@ def print_sudoku_board(board):
     for row in board:
         print(" ".join(map(str, row)))
 
+
 # Example Sudoku board
 sudoku_board = [
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
