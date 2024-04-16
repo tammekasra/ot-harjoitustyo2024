@@ -57,18 +57,15 @@ class BoardGenerator:
         
         '''
         
-        This should just check if there are any same numbers that are in column
+        This should just check if there are any same numbers that are in COLUMN
         
         '''
         
-        for i in range(1,9):
-            if i == row:
-                continue
+        for i in range(9):
             if board[i][column] == random_number:
                 return False
-            
-            
-        ''' 
+
+        '''
         
         I NEED TO IMPLEENT 3X3 GRID CHECK!
         
