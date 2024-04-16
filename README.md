@@ -12,10 +12,10 @@ The application has been tested with Python version 3.8. Issues may arise, espec
 
 ## Dokumetation
 
-[vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/vaatimusmaarittely.md)
 
 
-[tuntikirjanpito](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/tuntikirjanpito.md)
 
 
 [Changelogin](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/changelog.md)
