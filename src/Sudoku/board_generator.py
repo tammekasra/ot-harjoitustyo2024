@@ -64,12 +64,20 @@ class BoardGenerator:
         for i in range(9):
             if board[i][column] == random_number:
                 return False
+            
+            
 
         '''
         
-        I NEED TO IMPLEENT 3X3 GRID CHECK!
+        This is the 3x3 grid check - it checks whether there are same numbers in 3x3 grid
         
         '''
+        start_row = (row // 3) * 3 # This just takes the row number - 3 // 3 = 0 - we check row 1 and 4 // 3 = 1, we check row 2 and  7//3 = 2 - we check row 3 
+        start_column = (column // 3) * 3 # This just takes the column number - 3 // 3 = 0 - we check column 1 and 4 // 3 = 1, we check column 2 and  7//3 = 2 - we check column 3
+        for i in range(start_row, start_row + 3): #checks the 3x3 grid
+            for j in range(start_column, start_column + 3):
+                if board[i][j] == random_number:
+                    return False
         
         return True
     
