@@ -8,7 +8,7 @@
     Game "1" -- "1" User Interface
     User Interface "1" -- "1" Game
     Game "1" -- "1" Board
-    Board "1" -- "1" Test Algorithm if it's solvable
+    Board "1" -- "1" Test Algorithm if its solvable
     Board "1" -- "1" Solve 
     Game "1" -- "1..x" Points
     Game "1" -- Timer
