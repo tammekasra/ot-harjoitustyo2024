@@ -13,6 +13,7 @@
     Game "1" -- "1..x" Points
     Game "1" -- Timer
     Game "1" -- Hints
+    Hints "1" -- "-1" Points
     
 ```
 
