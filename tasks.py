@@ -13,7 +13,7 @@ def start(ctx):
 
 @task
 def test(ctx):
-    ctx.run("poetry run pytest src/tests")
+    ctx.run("poetry run pytest src")
 
 @task
 def lint(ctx):

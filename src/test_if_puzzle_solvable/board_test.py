@@ -1,7 +1,6 @@
 
 import unittest 
-from Sudoku.game import SudokuGame  # Import the sudoku game itself to do the tests
-import main
+from Sudoku import board_generator
 
 
 class TestPrintSudokuBoard(unittest.TestCase):
@@ -15,7 +14,8 @@ class TestPrintSudokuBoard(unittest.TestCase):
     '''
     
     def test_if_there_are_no_zeros_in_grid(self):
-        sudoku_board = main.SudokuGame.sudoku_board
+        sudoku_board = board_generator.BoardGenerator.RandomBoard() #we dont need to do the tests via main.... stupid me
+    #sudoku_board = main.SudokuGame.sudoku_board
         
         for i in range(9):
             for j in range(9):
@@ -27,7 +27,7 @@ class TestPrintSudokuBoard(unittest.TestCase):
     '''
     
     def test_if_there_are_same_numbers_on_the_same_row(self):
-        sudoku_board = main.SudokuGame.sudoku_board
+        sudoku_board = board_generator.BoardGenerator.RandomBoard()
         
         for i in range(9):
             row = sudoku_board[i] #we checks the rows
@@ -43,7 +43,7 @@ class TestPrintSudokuBoard(unittest.TestCase):
     This just check if there are same numbers on the same COLUMN
     '''
     def test_if_there_are_same_numbers_on_the_same_column(self):
-        sudoku_board = main.SudokuGame.sudoku_board
+        sudoku_board = board_generator.BoardGenerator.RandomBoard()
         
         for i in range(9): 
             column = [sudoku_board[j][i] for j in range(9)] 
