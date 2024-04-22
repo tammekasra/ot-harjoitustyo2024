@@ -33,7 +33,14 @@ class SudokuGame:
     We just take the generated board from board_generator - sudoku board
     
     '''
-    sudoku_board = board_generator.BoardGenerator.Difficulty()
+    sudoku_board = board_generator.BoardGenerator.RandomBoard()
+    
+    
+    '''
+    
+    Continue from here - we need to take away some numbers from the sudoku_board and add additional tests
+    
+    '''
     
     
     ''' 

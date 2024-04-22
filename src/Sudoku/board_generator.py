@@ -99,11 +99,7 @@ class BoardGenerator:
                 
         return True
     
-    def Difficulty():
-        
-        board_filled_random_numbers = BoardGenerator.RandomBoard()
-        
-        return board_filled_random_numbers
+    
                 
         
     
