@@ -10,3 +10,7 @@
 -- I got generating a correct board for sudoku that prints a board where there are no same numbers in the same row, column and 3x3 grid
 -- There are new tests that checks if the board indeed is correct!
 
+## Week 5
+
+-- The UI got implemented, but it still doesn't properly function well, it tends to crash multiple times....
+
