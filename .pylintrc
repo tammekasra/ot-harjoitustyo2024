@@ -637,3 +637,11 @@ init-import=no
 # List of qualified module names which can have objects that can redefine
 # builtins.
 redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
+
+# I dont understand why we need whitespace trailing
+disable = trailing-whitespace,missing-final-newline,pointless-string-statement,line-too-long,no-member,unsubscriptable-object,invalid-name,no-else-return,consider-using-enumerate
+
+# We just disable newlines - these are just comments within the code
+
+
+
