@@ -52,7 +52,36 @@ class TestPrintSudokuBoard(unittest.TestCase):
                 for k in range(9): 
                     if k != j:
                         self.assertNotEqual(current_number, column[k])
+                        
+    ''' 
+    
+    This just test whether there are any duplicates in 3x3 grid or boxes
+    
+    '''
 
+    def test_if_there_are_same_numbers_on_the_same_3x3_grid(self):
+        
+        sudoku = board_generator.BoardGenerator.RandomBoard()
+        
+        duplicates = self.duplicates_in_grid(sudoku)
+        
+        self.assertFalse(duplicates, "There are same numbers in the same 3x3 grid.")
+
+    def duplicates_in_grid(self, board):
+        for row in range(0, 9, 3): # Iterate over each 3x3 grid
+            for column in range(0, 9, 3):
+                seen = set() #to check if there are any same number in the grid
+                for i in range(row, row + 3):
+                    for j in range(column, column + 3):
+                        if board[i][j] != 0:
+                            if board[i][j] in seen:
+                                return True
+                            seen.add(board[i][j])
+        return False
+        
+        
+        
+        
 if __name__ == '__main__':
     unittest.main()
 
