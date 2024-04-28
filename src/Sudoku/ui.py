@@ -1,39 +1,18 @@
+
 import pygame #we can later add pygame features like U.I for this
-from Sudoku import board_generator
-from Sudoku import board_generator2
-import copy #we need it to copy list twice so we can check the original
+import copy
+class UserInterface:
+    
+    
+              
 
-
-
-class SudokuGame:
-    
-    '''
-    
-    We might need this to see if it print out the way we wanted - 9x9 grid
-    
-    '''
-    def print_sudoku_board(board): # This just prints the game - DO NOT USE THIS IN TESTS SINCE WONT ALLOT TO DO THE COMPARISON!
-       
-        for row in board:
-            print(" ".join(map(str, row)))
-            
-            
-            
-            
-    '''
-    This is the pygame set-up
-    
-    '''
     
     
-    '''
+    #!!! These codes for pygame were taken from https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py and 
     
+    #https://github.com/techwithtim/Sudoku-GUI-Solver/blob/master/GUI.py
     
-    !!! These codes for pygame were taken from https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py and 
-    
-    https://github.com/techwithtim/Sudoku-GUI-Solver/blob/master/GUI.py
-    
-    '''
+    #We got the modified codes from here to the end!
             
     def display_sudoku_board(board):
         
@@ -61,12 +40,6 @@ class SudokuGame:
        
         user_input_grid = [[False for _ in range(9)] for _ in range(9)]  # This is just for the input - so we can input the number in correct culmn!
 
-        
-        
-        
-        screen.fill(WHITE) #We just have a white screen - otherwise it's black
-        
-        
         Game = True
         
         while Game:
@@ -102,7 +75,7 @@ class SudokuGame:
                                 board[row][column] = number
                           
 
-           
+            screen.fill(WHITE) #We just have a white screen - otherwise it's black
             
             '''
             
@@ -128,32 +101,3 @@ class SudokuGame:
             pygame.display.flip()  #We need to display it
  
         pygame.quit() #We need to quit the game
-        
-    '''
-            Here
-            
-    '''
-
-
-    '''
-        
-        We just take the generated board from board_generator - sudoku board
-        
-    '''
-    sudoku_board = board_generator.BoardGenerator.RandomBoard()
-        
-        
-    '''
-        
-        Continue from here - we need to take away some numbers from the sudoku_board and add additional tests
-        
-    '''
-    sudoku_board2 = board_generator2.BoardGenerator2.RandomBoard(sudoku_board)
-        
-    ''' 
-        This just prints the sudoku board
-        
-        '''
-    #display_sudoku_board(sudoku_board2)
-       
-    

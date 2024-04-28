@@ -1,13 +1,13 @@
-#import unittest 
-#from Sudoku import game # We get the board from that not board_generator2
+import unittest 
+from Sudoku.board_generator import BoardGenerator
+from Sudoku.board_generator2 import BoardGenerator2
 
 
 '''
-Something is really wrong here - like really really bad...
+I need to implement this later on!
 
 '''
 
-'''
 
 class TestSudokuSolvabe(unittest.TestCase):
 
@@ -15,11 +15,11 @@ class TestSudokuSolvabe(unittest.TestCase):
     
     
     def test_if_the_solution_has_an_answer(self):
-        board = game.board_generator2()
+        random_board = BoardGenerator.RandomBoard()
+        modified_board = BoardGenerator2.RandomBoard(random_board)
         
      
         
       
         
-        return board
-'''
+        
