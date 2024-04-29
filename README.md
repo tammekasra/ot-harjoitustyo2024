@@ -27,21 +27,31 @@ The application has been tested with Python version 3.8. Issues may arise, espec
 
 ## Installation
 
-1. Install dependencies with the following command:
+1. Clone the repository and enter topmost directory:
 
-```bash
-poetry install
+``` 
+git clone https://github.com/tammekasra/ot-harjoitustyo2024.git
 ```
 
-2. Perform necessary initialization steps with the command:
+```
+cd ot-harjoitustyo2024
+```
 
-```bash
-poetry run invoke build
+2. Enter poetry shell:
+
+```poetry shell
+
+```
+
+3. Perform necessary initialization steps with the command:
+
+```poetry install --no-root
+
 ```
 
 3. Start the application with the command:
 
-```bash
+```
 poetry run invoke start
 ```
 
