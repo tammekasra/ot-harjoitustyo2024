@@ -1,5 +1,4 @@
 import random
-import pygame
 
 
 
@@ -98,6 +97,15 @@ class BoardGenerator:
                     return False
                 
         return True
+    
+    
+    def RandomBoard_delete_random_cells(board):
+        for i in range(len(board)): 
+            for j in range(len(board[i])):
+                if random.random() < 0.30:  # 30% chance of changing it back to 0
+                    board[i][j] = 0
+        
+        return board
     
     
                 

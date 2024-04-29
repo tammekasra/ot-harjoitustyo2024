@@ -1,11 +1,20 @@
 
 import pygame #we can later add pygame features like U.I for this
 import copy
+import random
+
+
+
+
 class UserInterface:
     
     
               
 
+    score = 0
+    
+    BLACK = (0, 0, 0) #Just color from pygame document
+    WHITE = (255, 255, 255)
     
     
     #!!! These codes for pygame were taken from https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py and 
@@ -14,7 +23,7 @@ class UserInterface:
     
     #We got the modified codes from here to the end!
             
-    def display_sudoku_board(board):
+    def display_sudoku_board(board,solved_board):
         
         
         pygame.init()  #This just initliazes the game - just like for any pygame!
@@ -27,11 +36,10 @@ class UserInterface:
         screen = pygame.display.set_mode((450, 450)) # screen has length 450 x 450
         
         
-        pygame.display.set_caption("Sudoku Game") # This is just the description of the game! 
+          
+       
 
         
-        BLACK = (0, 0, 0) #Just color from pygame document
-        WHITE = (255, 255, 255)
         
 
       
@@ -45,8 +53,11 @@ class UserInterface:
         while Game:
             for event in pygame.event.get(): # For the event to start
                 
+                if board == solved_board:
+                    Game == False 
+                    pygame.quit()
                 
-                if event.type == pygame.QUIT: # Quit pygame when pressed on X
+                elif event.type == pygame.QUIT: # Quit pygame when pressed on X
                     Game = False
                     
                     
@@ -56,47 +67,75 @@ class UserInterface:
              
                     column = mouse[0] // 50  #We get the column where the mouse is
                     row = mouse[1] // 50  #We get the row where the mouse is
+                    
+                
                  
                   
                     
                 elif event.type == pygame.KEYDOWN:
-                    if pygame.K_1 <= event.key <= pygame.K_9: # We can only press from 1 to 9
-                        
-                        
-                        number = int(pygame.key.name(event.key)) # This didn't work when I didn't have int
-                        
-                        
+                    
                      
-                        if (not user_input_grid[row][column]): # This allows to add the number to the column
+                        
+                        
+                    if pygame.K_1 <= event.key <= pygame.K_9 or pygame.K_SPACE == event.key or pygame.K_BACKSPACE == event.key: # We can only press from 1 to 9
+                        
+                        
+                        if pygame.K_1 <= event.key <= pygame.K_9 :
+                        
+                        
+                        
+                            number = int(pygame.key.name(event.key)) # This didn't work when I didn't have int
                             
                             
-                            # If the there is 0 in the original sudoku - then add a number - otherwise we would change the whole sudoku
-                            if board2[row][column] == 0:
-                                board[row][column] = number
-                          
+                        
+                            if (not user_input_grid[row][column]): # This allows to add the number to the column
+                                    board[row][column] = number                                 # If the there is 0 in the original sudoku - then add a number - otherwise we would change the whole sudoku
+                                    UserInterface.score +=1 
+                        
+                        else:
+                                zeros = []   # This allows to add the number to the column                                
+                                for i in range(9):
+                                    for j in range(9):
+                                        if board[i][j] == 0:
+                                            zeros.append((i,j))
+                                row_1, col_2 = random.choice(zeros)
+                                
+                                board[row_1][col_2] = solved_board[row_1][col_2]
+                                
+                                UserInterface.score -=1 
+                                zeros.clear()
+    
+            screen.fill(UserInterface.WHITE) #We just have a white screen - otherwise it's black
+            
+            
+            pygame.display.set_caption(f"Sudoku Game Score: {UserInterface.score}") # This is just the description of the game! 
+            
+            
 
-            screen.fill(WHITE) #We just have a white screen - otherwise it's black
+
             
             '''
             
-            From here I got copy pasted the ideas from the github to ....
+            From here I modified the code ....
             
             '''
            
             for i in range(9): #This is just for the sudoku board
                 for j in range(9):
                     if board[i][j] != 0:
-                        text = font.render(str(board[i][j]), True, BLACK)
+                        text = font.render(str(board[i][j]), True, UserInterface.BLACK)
                         screen.blit(text, (j * 50 + 15, i * 50 + 15))
+                 
+                     
 
             
             for i in range(10): #This is only for the grid 
                 if i % 3 == 0:
-                    pygame.draw.line(screen, BLACK, (50 * i, 0), (50 * i, 450), 4)
-                    pygame.draw.line(screen, BLACK, (0, 50 * i), (450, 50 * i), 4)
+                    pygame.draw.line(screen, UserInterface.BLACK, (50 * i, 0), (50 * i, 450), 4)
+                    pygame.draw.line(screen, UserInterface.BLACK, (0, 50 * i), (450, 50 * i), 4)
                 else:
-                    pygame.draw.line(screen, BLACK, (50 * i, 0), (50 * i, 450), 2)
-                    pygame.draw.line(screen, BLACK, (0, 50 * i), (450, 50 * i), 2)
+                    pygame.draw.line(screen, UserInterface.BLACK, (50 * i, 0), (50 * i, 450), 2)
+                    pygame.draw.line(screen, UserInterface.BLACK, (0, 50 * i), (450, 50 * i), 2)
 
             pygame.display.flip()  #We need to display it
  
