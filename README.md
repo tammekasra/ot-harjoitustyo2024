@@ -49,7 +49,7 @@ poetry shell
 poetry install --no-root
 ```
 
-3. Start the application with the command:
+4. Start the application with the command:
 
 ```bash
 poetry run invoke start
