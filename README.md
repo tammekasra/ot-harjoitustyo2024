@@ -29,29 +29,29 @@ The application has been tested with Python version 3.8. Issues may arise, espec
 
 1. Clone the repository and enter topmost directory:
 
-``` 
+```bash
 git clone https://github.com/tammekasra/ot-harjoitustyo2024.git
 ```
 
-```
+```bash
 cd ot-harjoitustyo2024
 ```
 
 2. Enter poetry shell:
 
-```poetry shell
-
+```bash
+poetry shell
 ```
 
 3. Perform necessary initialization steps with the command:
 
-```poetry install --no-root
-
+```bash
+poetry install --no-root
 ```
 
 3. Start the application with the command:
 
-```
+```bash
 poetry run invoke start
 ```
 
