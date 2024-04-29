@@ -55,6 +55,12 @@ class UserInterface2:
             text_itself = UserInterface2.font.render(name + text, True, UserInterface2.BLACK)
             UserInterface2.screen.blit(text_itself, (input_name.x + 5, input_name.y + 5))
             
+            
+            '''
+            I don't know how to make it so that we are changing the columns using mousebuttons!
+            
+            '''
+            
             pygame.draw.rect(UserInterface2.screen, UserInterface2.BLACK, input_difficulty,2)
             text_itself2 = UserInterface2.font.render(difficulty, True, UserInterface2.BLACK)
             UserInterface2.screen.blit(text_itself2, (input_difficulty.x + 5, input_difficulty.y + 5))
