@@ -9,3 +9,5 @@ esille vaikka on pycache .gitignoreissa
 | 04.22 |  3  | - I tried implmeneting the UI by myself but sadly could get far much
 | 04.23 |  5  | - Finally got the UI implemented by help by some youtube videos and other familiar projects - added 2 extra tests - 1 check if a number is prestend
 once in a 3x3 grid which works, but the other test has not been implemented yet, I need to use backtrack to see if the puzze actually is solvable using backtrack, but I don't know how to implement this... 
+| 04.28 |   4 | - I got the sudoku to generate the sudoku puzzle correctly and made a new display for the user to input a name and the difficulty level
+| 04.2  |   4 | - I fixed some bugs and implemented a better user interface for the sudoku game and the name input!
