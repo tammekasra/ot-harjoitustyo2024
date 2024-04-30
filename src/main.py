@@ -6,10 +6,17 @@ from Sudoku import board_generator
 
 
 
+
 if __name__ == "__main__":
     
     
-    name = ui2.main()   # This is for the selecting name and difficulty
+    a = ui2.UserInterface2()
+    a.input_box()
+    a.run()
+   
+    #ui2.UserInterface2.input_box()   # This is for the selecting name and difficulty
+    
+   
     
     solved_board = board_generator.BoardGenerator.RandomBoard()  #This generated a board filled with number - basically the solution
     

@@ -1,34 +1,29 @@
 import pygame
 
-
 class UserInterface2:
-   
-    pygame.init()
+    def __init__(self):
+        pygame.init()
 
- 
-    x_axis = 800
-    y_axis =  600
-    
-    
-    
-    screen = pygame.display.set_mode((x_axis, y_axis))
- 
+        self.x_axis = 800
+        self.y_axis =  600
 
- 
-    WHITE = (255, 255, 255)
-    BLACK = (0, 0, 0)
+        self.screen = pygame.display.set_mode((self.x_axis, self.y_axis))
 
-    
-    pygame.display.set_caption("Welcome to Sudoku!")
+        self.WHITE = (255, 255, 255)
+        self.BLACK = (0, 0, 0)
 
-    font = pygame.font.Font(None, 32)
+        pygame.display.set_caption("Welcome to Sudoku!")
 
+        self.font = pygame.font.Font(None, 32)
 
-    def input_box(name,difficulty):
+        self.username_scores = {}  # Dictionary to store usernames and scores
+
+    def input_box(self):
         text = ""
         input_name = pygame.Rect(200, 200, 400, 32)
-        input_difficulty = pygame.Rect(200, 300, 400, 32) 
         input = True
+        prompt = "Enter your name: "
+
         while input:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -36,41 +31,56 @@ class UserInterface2:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
                         input = False
-                
-                    
+                        self.username_scores[text] = 0  # Initialize score to 0
                     elif event.key == pygame.K_BACKSPACE:
                         if len(text) == 17:
                             continue
                         else:
-                          text = text + " "
+                            text = text + " "
                     elif event.key == pygame.K_LEFT:
-                        text = text[:-1] #just to get back
+                        return self.input_box()  # Go back to input_box
                     else:
                         if len(text) == 17:
                             continue
                         else:
-                            text = text + event.unicode  #even unicode is the userinput
-            UserInterface2.screen.fill(UserInterface2.WHITE)
-            pygame.draw.rect(UserInterface2.screen, UserInterface2.BLACK, input_name, 2)
-            text_itself = UserInterface2.font.render(name + text, True, UserInterface2.BLACK)
-            UserInterface2.screen.blit(text_itself, (input_name.x + 5, input_name.y + 5))
-            
-            
-            '''
-            I don't know how to make it so that we are changing the columns using mousebuttons!
-            
-            '''
-            
-            pygame.draw.rect(UserInterface2.screen, UserInterface2.BLACK, input_difficulty,2)
-            text_itself2 = UserInterface2.font.render(difficulty, True, UserInterface2.BLACK)
-            UserInterface2.screen.blit(text_itself2, (input_difficulty.x + 5, input_difficulty.y + 5))
-            
+                            text = text + event.unicode  # user input
+            self.screen.fill(self.WHITE)
+            pygame.draw.rect(self.screen, self.BLACK, input_name, 2)
+            text_itself = self.font.render(prompt + text, True, self.BLACK)
+            self.screen.blit(text_itself, (input_name.x + 5, input_name.y + 5))
+
             pygame.display.flip()
+
+        return self.username_scores  
+    
+    def usernames_and_scores(self):
+        self.screen.fill(self.WHITE)
+        y_offset = 50
+        for username, score in self.username_scores.items():
+            user_text = self.font.render(f"{username}: {score}", True, self.BLACK)
+            self.screen.blit(user_text, (200, y_offset))
+            y_offset += 30
+        pygame.display.flip()
+
+    def run(self):
+        while True:
+            self.usernames_and_scores()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    return
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        return
+                    elif event.key == pygame.K_LEFT:
+                        self.input_box()  # Go back to input_box
+                    
+
+
             
-            
-def main():
-    game = UserInterface2.input_box("Enter your name: ","Select Difficulty - 1,2 or 3: ")
-    pygame.quit()
+
+    
     
 
        

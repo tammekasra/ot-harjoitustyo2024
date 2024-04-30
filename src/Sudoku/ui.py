@@ -1,8 +1,7 @@
 
 import pygame #we can later add pygame features like U.I for this
-import copy
 import random
-
+from Sudoku import ui2
 
 
 
@@ -10,11 +9,15 @@ class UserInterface:
     
     
               
-
+    
     score = 0
     
     BLACK = (0, 0, 0) #Just color from pygame document
     WHITE = (255, 255, 255)
+    
+    
+    
+    
     
     
     '''!!! These codes for pygame were taken from https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py and 
@@ -140,3 +143,10 @@ class UserInterface:
             pygame.display.flip()  #We need to display it
  
         pygame.quit() #We need to quit the game
+        
+    
+  
+                
+        
+        
+    
