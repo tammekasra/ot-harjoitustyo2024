@@ -155,12 +155,10 @@ class UserInterface2:
                 if self.start_board == self.copy_solved_board:
                     Game == False 
                     pygame.quit()
-                    self.usernames_and_scores()
                 
                 elif event.type == pygame.QUIT: # Quit pygame when pressed on X
                     Game = False
                     pygame.quit()
-                    self.usernames_and_scores()
                     
                     
                     
