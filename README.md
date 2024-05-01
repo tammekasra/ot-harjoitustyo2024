@@ -4,6 +4,12 @@
 The Sudoku game is a game where there are m x m rows and columns such that each row and column can have numbers from 1 to 9. The main idea of the game is at the beginning the 9x9 grid has random numbers generated to it.
 The user then has to figure out whhich numbers to put where until the full grid is completed!
 
+## How to play the game!
+
+After the proper installation provided beleow - we start the game by inserting our name in the first graph, afterwards we select the player with the number and then we start the sudoku game!
+Playing the sudoku game we can press BACKSPACE to get a correct solution, but the player himself will loose 1 point each time whenever backspace (hints) are given. The player clicks on the empty grid 
+and then presses a desired number to it until the game is finished!
+
 
 ## Note on Python Version
 
@@ -64,6 +70,8 @@ You can run the program with the following command:
 ```bash
 poetry run invoke start
 ```
+
+-Sadly I haven't had the time to implement the code properly so it actually gives points for the player and that after finishing the sudoku game we can return to the display menu.
 
 ### Testing
 
