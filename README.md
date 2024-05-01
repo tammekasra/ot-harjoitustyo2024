@@ -10,6 +10,10 @@ After the proper installation provided beleow - we start the game by inserting o
 Playing the sudoku game we can press BACKSPACE to get a correct solution, but the player himself will loose 1 point each time whenever backspace (hints) are given. The player clicks on the empty grid 
 and then presses a desired number to it until the game is finished!
 
+For now the instruction are the following:
+1)Insert name
+2) Press RIGHT arrow key "->"
+3) Press on the white space and press a number to insert a solution or press BACKSPACE to get a correct solution
 
 ## Note on Python Version
 
