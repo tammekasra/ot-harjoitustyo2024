@@ -8,9 +8,12 @@ if __name__ == "__main__":
     
     a = user_interface.UserInterface2()
     
-    a.input_box()
+    game_loop = True
+    while game_loop:
     
-    a.run()
+        a.input_box()
+        
+        a.run()
 
     
     

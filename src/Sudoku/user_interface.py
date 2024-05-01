@@ -82,7 +82,7 @@ class UserInterface2:
     
     '''
     
-    This just shows the all the usernames with their scores as display.
+    This just shows the all the usernames with their scores as display and updates it!
     '''
     
     def usernames_and_scores(self):
@@ -93,6 +93,11 @@ class UserInterface2:
             self.screen.blit(user_text, (200, y_offset))
             y_offset += 30
         pygame.display.flip()
+        
+    '''
+    This displays all the usernames and their scores!
+    
+    '''
 
     def run(self):
         while True:
@@ -106,9 +111,9 @@ class UserInterface2:
                         pygame.quit()
                         return
                     elif event.key == pygame.K_LEFT:
-                        self.input_box()  # Go back to input_box
+                        return self.input_box()  # Go back to input_box
                     elif event.key == pygame.K_RIGHT:
-                        self.display_sudoku_board()
+                        return self.display_sudoku_board()
     
     '''!!! These codes for pygame were taken from https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py and 
     
@@ -152,13 +157,14 @@ class UserInterface2:
         while Game:
             for event in pygame.event.get(): # For the event to start
                 
+                
                 if self.start_board == self.copy_solved_board:
                     Game == False 
-                    pygame.quit()
+                    return self.run()
                 
                 elif event.type == pygame.QUIT: # Quit pygame when pressed on X
                     Game = False
-                    pygame.quit()
+                    return self.run()
                     
                     
                     
@@ -172,9 +178,10 @@ class UserInterface2:
                               
                 elif event.type == pygame.KEYDOWN:
                             
-                    if pygame.K_1 <= event.key <= pygame.K_9 or pygame.K_SPACE == event.key or pygame.K_BACKSPACE == event.key: # We can only press from 1 to 9
+                    if pygame.K_1 <= event.key <= pygame.K_9 or event.key == pygame.K_LEFT or pygame.K_SPACE == event.key or pygame.K_BACKSPACE == event.key: # We can only press from 1 to 9
                         
-                        
+                        if event.key == pygame.K_LEFT:
+                            return self.run()
                         if pygame.K_1 <= event.key <= pygame.K_9 :
                         
                         
