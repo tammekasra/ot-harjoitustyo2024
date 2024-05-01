@@ -39,6 +39,8 @@ class UserInterface2:
         
         self.score = 0
         
+        self.name = ""
+        
     ''' 
     This is the samll box where the name will be written!
     
@@ -88,8 +90,8 @@ class UserInterface2:
     def usernames_and_scores(self):
         self.screen.fill(self.WHITE)
         y_offset = 50
-        for username, score in self.username_scores.items():
-            user_text = self.font.render(f"{username}: {score}", True, self.BLACK)
+        for index, (username, score) in enumerate(self.username_scores.items(), start=1):
+            user_text = self.font.render(f"{index}. {username}: {score}", True, self.BLACK)
             self.screen.blit(user_text, (200, y_offset))
             y_offset += 30
         pygame.display.flip()
@@ -114,6 +116,16 @@ class UserInterface2:
                         return self.input_box()  # Go back to input_box
                     elif event.key == pygame.K_RIGHT:
                         return self.display_sudoku_board()
+                    elif pygame.K_1 <= event.key <= pygame.K_9:
+                        number = int(pygame.key.name(event.key))
+                        for index, (username, score) in enumerate(self.username_scores.items(), start=1):
+                            if index == number:
+                                self.score = score
+                                self.name = username
+                                return self.display_sudoku_board()
+                                
+                        
+                        
     
     '''!!! These codes for pygame were taken from https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py and 
     
@@ -192,6 +204,11 @@ class UserInterface2:
                         
                             if (not user_input_grid[row][column]): # This allows to add the number to the column
                                     self.start_board[row][column] = number                                 # If the there is 0 in the original sudoku - then add a number - otherwise we would change the whole sudoku
+                                
+                                    for index, (username, score) in enumerate(self.username_scores.items(), start=1):
+                                        if username == self.name:
+                                            self.username_scores[username] +=1
+                                
                                     self.score +=1 
                         
                         else:
@@ -210,7 +227,7 @@ class UserInterface2:
             screen_sudoku.fill(self.WHITE) #We just have a white screen - otherwise it's black
             
             
-            pygame.display.set_caption(f"Sudoku Game Score: {self.score}") # This is just the description of the game! 
+            pygame.display.set_caption(f"Sudoku Game Score: {self.name,self.score}") # This is just the description of the game! 
             
             
 
