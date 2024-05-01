@@ -159,6 +159,9 @@ class UserInterface2:
                 
                 elif event.type == pygame.QUIT: # Quit pygame when pressed on X
                     Game = False
+                    pygame.quit()
+                    self.usernames_and_scores()
+                    
                     
                     
                 elif event.type == pygame.MOUSEBUTTONDOWN: 
