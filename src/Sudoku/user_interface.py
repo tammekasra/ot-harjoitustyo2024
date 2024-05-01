@@ -25,7 +25,7 @@ class UserInterface2:
 
         self.screen = pygame.display.set_mode((self.x_axis, self.y_axis))
         
-        self.screen_display = pygame.display.set_mode((450, 450)) 
+        self.screen_display = pygame.display.set_mode((800, 600)) 
         
 
         self.WHITE = (255, 255, 255)
@@ -135,7 +135,7 @@ class UserInterface2:
         Screen length 450x450
         '''
        
-        screen = pygame.display.set_mode((450, 450)) 
+        screen_sudoku = pygame.display.set_mode((450, 450)) 
         
         
           
@@ -207,7 +207,7 @@ class UserInterface2:
                                 self.score -=1 
                                 zeros.clear()
     
-            screen.fill(self.WHITE) #We just have a white screen - otherwise it's black
+            screen_sudoku.fill(self.WHITE) #We just have a white screen - otherwise it's black
             
             
             pygame.display.set_caption(f"Sudoku Game Score: {self.score}") # This is just the description of the game! 
@@ -226,18 +226,18 @@ class UserInterface2:
                 for j in range(9):
                     if self.start_board[i][j] != 0:
                         text = font.render(str(self.start_board[i][j]), True, self.BLACK)
-                        screen.blit(text, (j * 50 + 15, i * 50 + 15))
+                        screen_sudoku.blit(text, (j * 50 + 15, i * 50 + 15))
                  
                      
 
             
             for i in range(10): #This is only for the grid 
                 if i % 3 == 0:
-                    pygame.draw.line(screen, self.BLACK, (50 * i, 0), (50 * i, 450), 4)
-                    pygame.draw.line(screen, self.BLACK, (0, 50 * i), (450, 50 * i), 4)
+                    pygame.draw.line(screen_sudoku, self.BLACK, (50 * i, 0), (50 * i, 450), 4)
+                    pygame.draw.line(screen_sudoku, self.BLACK, (0, 50 * i), (450, 50 * i), 4)
                 else:
-                    pygame.draw.line(screen, self.BLACK, (50 * i, 0), (50 * i, 450), 2)
-                    pygame.draw.line(screen, self.BLACK, (0, 50 * i), (450, 50 * i), 2)
+                    pygame.draw.line(screen_sudoku, self.BLACK, (50 * i, 0), (50 * i, 450), 2)
+                    pygame.draw.line(screen_sudoku, self.BLACK, (0, 50 * i), (450, 50 * i), 2)
 
             pygame.display.flip()  #We need to display it
  
