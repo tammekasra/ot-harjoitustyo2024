@@ -1,5 +1,4 @@
 import unittest 
-import copy
 from Sudoku.board_generator import BoardGenerator
 
 class TestSudokuSolvable(unittest.TestCase):
