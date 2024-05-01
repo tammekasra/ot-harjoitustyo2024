@@ -113,7 +113,7 @@ class UserInterface2:
                         pygame.quit()
                         return
                     elif event.key == pygame.K_LEFT:
-                        return self.input_box()  # Go back to input_box
+                        return self.input_box()  
                     elif event.key == pygame.K_RIGHT:
                         return self.display_sudoku_board()
                     elif pygame.K_1 <= event.key <= pygame.K_9:
@@ -167,15 +167,18 @@ class UserInterface2:
         Game = True
        
         while Game:
+            
             for event in pygame.event.get(): # For the event to start
                 
                 
                 if self.start_board == self.copy_solved_board:
                     Game == False 
+                    self.reset_board()
                     return self.run()
                 
                 elif event.type == pygame.QUIT: # Quit pygame when pressed on X
                     Game = False
+                    self.reset_board()
                     return self.run()
                     
                     
@@ -221,6 +224,10 @@ class UserInterface2:
                                 
                                 self.start_board[row_1][col_2] = self.copy_solved_board[row_1][col_2]
                                 
+                                for index, (username, score) in enumerate(self.username_scores.items(), start=1):
+                                        if username == self.name:
+                                            self.username_scores[username] -=1
+                                
                                 self.score -=1 
                                 zeros.clear()
     
@@ -259,6 +266,19 @@ class UserInterface2:
             pygame.display.flip()  #We need to display it
  
         pygame.quit() #We need to quit the game
+        
+        
+        
+    ''' 
+    This just resets the board whenever we have finished the game - otherwise the board will be the same!
+    
+    '''
+    def reset_board(self):
+        self.solved_board = board_generator.BoardGenerator.RandomBoard() 
+    
+        self.copy_solved_board = copy.deepcopy(self.solved_board)
+    
+        self.start_board = board_generator.BoardGenerator.RandomBoard_delete_random_cells(self.solved_board)
                         
 
 
