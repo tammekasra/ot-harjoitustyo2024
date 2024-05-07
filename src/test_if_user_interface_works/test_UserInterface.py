@@ -53,6 +53,8 @@ class TestUserInterface(unittest.TestCase):
 
        
         self.assertEqual(scores, {"": 0})
+    
+  
 
     
     
