@@ -12,8 +12,9 @@ and then presses a desired number to it until the game is finished!
 
 For now the instruction are the following:
 1)Insert name
-2) Press RIGHT arrow key "->"
+2) Press RIGHT arrow key "->"  or press the LEFT arrow key "<-" to insert a new name
 3) Press on the white space and press a number to insert a solution or press BACKSPACE to get a correct solution
+4) You can insert a new player by pressing LEFT "<-" to insert a new name
 
 ## Note on Python Version
 
