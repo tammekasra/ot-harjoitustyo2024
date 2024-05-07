@@ -27,6 +27,13 @@ class BoardGenerator:
                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
+            
+            
+            '''
+            
+            This just fills the board with random numbers such that all the sudoku rules are used
+            
+            '''
 
             for i in range(9):  # Need to remember that this is the ROW
                 for j in range(9):  # Need to remember that this is the COLUMN
@@ -40,6 +47,14 @@ class BoardGenerator:
                 return sudoku_board
             else:
                 sudoku_board = [[0 for _ in range(9)] for _ in range(9)]
+
+
+
+    ''' 
+    
+    This checks whether the board is valid - all the sudoku rules are obtained here or not!
+    
+    '''
 
     def valid(board, row, column, random_number):
         ''' 
@@ -90,6 +105,15 @@ class BoardGenerator:
                     return False
 
         return True
+    
+    
+    '''
+    
+    This generated a sudoku board such that it randomly changes a random number to 0 with the percentange of 30% for the user 
+    
+    to solve
+    
+    '''
 
     def RandomBoard_delete_random_cells(board):
         for i in range(len(board)):
