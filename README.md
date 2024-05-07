@@ -21,6 +21,9 @@ The application has been tested with Python version 3.8. Issues may arise, espec
 
 
 ## Dokumetation
+
+[Final Release](https://github.com/tammekasra/ot-harjoitustyo2024/releases/tag/viikko7)
+
 [Release 1](https://github.com/tammekasra/ot-harjoitustyo2024/releases/tag/viikko5)
 
 [Vaatimusmaarittely](https://github.com/tammekasra/ot-harjoitustyo2024/blob/main/Dokumentaatio/vaatimusmaarittely.md)
